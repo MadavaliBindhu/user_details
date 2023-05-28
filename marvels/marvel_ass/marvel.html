@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARVAL_CHARACTERS</title>
+    <style>
+        .navbar{
+            width: auto;
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+            display:flex;
+        }
+        .display{
+            width:80px;
+            border-radius:80px;
+            margin-left: 650px;
+            
+        }
+        .text{
+            margin-left:500px;
+            margin-top: 80px;
+            padding:10px 0px 10px 30px;
+            font-size:18px;
+            border-radius:20px;
+            
+        }
+        .icon{
+        height: 50px;
+        width: 50px;
+        margin-top: 90px;
+        border:2px solid rgb(48, 5, 174);
+        margin-left:10px;
+        border-radius:20px;
+        
+        }
+        .search_box{
+            display: flex;
+            margin-left: 300px;
+        }
+        .image{
+            width:280px;
+            border-radius:80px;
+            margin-left: 850px;
+            margin-top:40px;
+        }
+        .subheading{
+            margin-left:830px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        
+        <div class="name">ROBOT HASH</div>
+        
+    </div>
+    <div class="search_box">
+        <input type="text" placeholder="Enter your name" class="text"/>
+        <div onclick="searchData()" class="icon"></div>
+    </div>
+    <div><small class="subheading">(Search with name get your Robot)</small></div>
+    <img class="image">
+    <!-- <div class="image"></div> -->
+</body>
+<script>
+    async function searchData()
+    {
+        let input = document.querySelector(".text").value;
+        let image = document.querySelector(".image");
+
+        image.src = `http://gateway.marvel.com/v1/public/comics/"name":${input}`;
+    }
+</script>
+</html>

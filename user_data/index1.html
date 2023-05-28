@@ -1,0 +1,91 @@
+
+<html>
+<head>
+    
+    <title>USER INFORMATION</title>
+    <style>
+    
+        .heading {
+            color : rgb(60, 71, 232);
+            margin : 10px 0px;
+            margin-left:800px;
+            font-size:35px;
+            margin-bottom: 90px;
+        }
+        
+        .inputFrom{
+          width:  200px;
+          display: flex;
+          flex-direction: column;
+          margin-left:800px;
+          
+        }
+
+        input {
+            margin : 5px 0px;
+            border-radius: 2px;
+            font-size: 20px;
+            
+        }
+
+        .submitBtn {
+            background-color : rgb(144, 252, 142);
+            color :black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="FromLayout">
+        <div class="heading">User Information</div>
+        <div class="inputFrom">
+            <input class="name" type="text" placeholder="Enter your full name"/>
+            <input class="username" type="text" placeholder="Enter your Username"/>
+            <input class="email" type="text" placeholder="Enter your Email"/>
+            <input class="mobilenumber" type="number" placeholder="Enter your mobile number" />
+            <input class="submitBtn" type="submit" value="create"/>
+        </div>
+        <div class="displayDetails">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let nameTag = document.querySelector(".name");
+    let usernameTag = document.querySelector(".username");
+    let emailTag = document.querySelector(".email");
+    let mobileTag = document.querySelector(".mobilenumber");
+    let submitBtn = document.querySelector(".submitBtn");
+    submitBtn.onclick = function(){
+        let usersTag = document.createElement("div");
+        let NameTag = document.createElement("div");
+        NameTag.textContent = "Name : " + (nameTag.value);
+        NameTag.style.margin = "10px 10px"
+
+        let UsernameTag = document.createElement("div");
+        UsernameTag.textContent = "UserName : " + (usernameTag.value);
+        UsernameTag.style.margin = "10px 10px"
+
+        let EmailTag = document.createElement("div");
+        EmailTag.textContent = "Email : " + (EmailTag.value);
+        EmailTag.style.margin = "10px 10px"
+
+        let mobilenumberTag = document.createElement("div");
+        mobilenumberTag.textContent = "Phone Number : " + (mobileTag.value);
+        mobilenumberTag.style.margin = "10px 10px"
+
+        usersTag.append(NameTag,UsernameTag,EmailTag,mobilenumberTag);   
+        // usersTag.style.height = "60px";
+        // usersTag.style.backgroundColor = "#E6E6FA";
+        // usersTag.style.margin = "10px 10px";
+
+        let userDetailTag = document.querySelector(".displayDetails");
+        userDetailTag.style.width = "581px";
+        userDetailTag.style.display = "flex";
+        userDetailTag.style.overflow = "scroll";
+        userDetailTag.style.flexWrap = "wrap";
+        userDetailTag.style.backgroundColor ="skyblue";
+        userDetailTag.append(usersTag);
+
+    }
+</script>
+</html>
